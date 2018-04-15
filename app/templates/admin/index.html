@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客管理中心</title>
+    <link href="../../static/libs/bootstrap3.3.7/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/libs/Font-Awesome-3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="../../static/css/admin.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><strong> 博客管理中心</strong></a>
+
+        </div>
+    </nav>
+
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <h5 class="sidebar-title">内容</h5>
+            <ul class="nav main-menu">
+                <li>
+                    <a href="/admin/article"><span
+                            class="glyphicon glyphicon-file"></span>
+                        文章管理</a>
+                </li>
+
+                <li>
+                    <a href="/admin/content" ><span
+                            class="glyphicon glyphicon-envelope"></span>
+                        评论管理</a>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)" onclick="showAtRight('')"><span
+                            class="glyphicon glyphicon-briefcase"></span>
+                        个人分类管理</a>
+                </li>
+
+            </ul>
+
+            <h5 class="sidebar-title">设置</h5>
+            <ul class="nav main-menu">
+                <li>
+                    <a href="javascript:void(0)" onclick="showAtRight('/admin/notice')"><span
+                            class="glyphicon glyphicon-bullhorn"></span>
+                        广播设置</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="showAtRight('/admin/carousel')"><span
+                            class="glyphicon glyphicon-picture"></span>
+                        轮播图设置</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="showAtRight('/admin/user')"><span
+                            class="glyphicon glyphicon-user"></span>
+                        个人信息设置</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="page-content">
+        <div class="page-title clearfix">
+            <div class="pull-left">
+                <h5>文章管理</h5>
+            </div>
+        </div>
+        <div id="content">
+
+            xxxx
+        </div>
+    </div>
+
+</div>
+
+<script src="../../static/libs/jquery-1.11.1/jquery.js"></script>
+
+
+<script type="text/javascript">
+    function showAtRight(url) {
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "html",
+            success: function (data) {//返回数据根据结果进行相应的处理
+                $("#content").html(data);
+            },
+            error: function () {
+                $("#content").html("获取数据失败！");
+            }
+        });
+    }
+</script>
+</body>
+</html>

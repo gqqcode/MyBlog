@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>博客编辑器</title>
+    <link rel="stylesheet" href="../../static/libs/editor-md/css/editormd.css"/>
+    <link href="../../static/libs/bootstrap3.3.7/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/libs/Font-Awesome-3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="../../static/css/admin.css" rel="stylesheet">
+
+
+</head>
+<body>
+{% include 'admin/navbar.html' %}
+<div class="blog-content">
+
+    <div class="title-box">
+        <input type="text" class="blog-title" maxlength="100" placeholder="输入文章标题">
+        <button class="submit-btn">发表博客</button>
+
+    </div>
+    <div id="test-editormd">
+        <textarea style="display:none;">
+            - TeX (Based on KaTeX);
+    - Emoji;
+    - Task lists;
+    - HTML tags decode;
+    - Flowchart and Sequence Diagram;
+        </textarea>
+    </div>
+</div>
+
+
+<script src="../../static/libs/editor-md/examples/js/jquery.min.js"></script>
+<script src="../../static/libs/editor-md/editormd.min.js"></script>
+<script src="../../static/libs/editor-md/lib/codemirror/codemirror.min.js"></script>
+<script type="text/javascript">
+    var testEditor;
+
+    $(function () {
+        testEditor = editormd("test-editormd", {
+            width: "100%",
+            syncScrolling: "single",
+            path: "../../static/libs/editor-md/lib/"
+
+        });
+
+    });
+</script>
+</body>
+</html>

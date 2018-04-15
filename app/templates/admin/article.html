@@ -1,0 +1,36 @@
+{% extends "admin/base.html" %}
+
+
+{% block page_content %}
+
+    <div class="page-content col-sm-10">
+        <span class="content-title">
+            文章管理
+        </span>
+
+        <div class="article-list">
+
+        </div>
+        <div class="article-footer">
+            <div class="m-style" id="pagination">
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+
+    <script>
+        $('#pagination').pagination({
+            totalData: 100,
+            showData: 5,
+            coping: true
+        });
+    </script>
+
+    {{ super() }}
+
+{% endblock %}

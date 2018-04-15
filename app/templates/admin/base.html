@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客管理中心</title>
+    <link href="../../static/libs/bootstrap3.3.7/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/libs/Font-Awesome-3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="../../static/css/admin.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../static/libs/pagination/common/reset.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../static/libs/pagination/common/highlight.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../static/libs/pagination/common/common.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../static/libs/pagination/pagination.css" media="screen">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+
+    {% block stylesheet %}
+
+    {% endblock %}
+
+</head>
+<body>
+
+<div class="wrapper-b">
+    {% include "admin/navbar.html" %}
+    <div class="container">
+        <div class="row">
+            {% block page %}
+                <div class="page col-sm-12">
+                <nav class="navbar navbar-side col-sm-2" role="navigation">
+                    <div class="sidebar-collapse">
+                        <span class="sidebar-title">内容</span>
+                        <ul class="nav main-menu">
+                            <li id="article">
+                                <a href="/admin/article" value="article"><span
+                                        class="glyphicon glyphicon-file"></span>
+                                    文章管理</a>
+                            </li>
+
+                            <li id="content">
+                                <a href="/admin/content" value="content"><span
+                                        class="glyphicon glyphicon-envelope"></span>
+                                    评论管理</a>
+                            </li>
+
+                            <li id="category">
+                                <a href="/admin/category" value="category"><span
+                                        class="glyphicon glyphicon-briefcase"></span>
+                                    个人分类管理</a>
+                            </li>
+
+                        </ul>
+
+                        <span class="sidebar-title">设置</span>
+                        <ul class="nav main-menu">
+                            <li id="notice">
+                                <a href="/admin/notice" value="notice"><span
+                                        class="glyphicon glyphicon-bullhorn"></span>
+                                    广播设置</a>
+                            </li>
+                            <li id="carousel">
+                                <a href="/admin/carousel" value="carousel"><span
+                                        class="glyphicon glyphicon-picture"></span>
+                                    轮播图设置</a>
+                            </li>
+                            <li id="user">
+                                <a href="/admin/user" value="user"><span
+                                        class="glyphicon glyphicon-user"></span>
+                                    个人信息设置</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+
+            {% endblock %}
+            {% block page_content %}
+                <div class="page-content col-sm-10">
+
+                </div>
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../static/libs/jquery-1.11.1/jquery.js"></script>
+<script src="../../static/libs/bootstrap3.3.7/js/bootstrap.js"></script>
+<script src="../../static/libs/jquery-cookie/jquery.cookie.js"></script>
+<script src="../../static/libs/jquery-1.11.1/jquery.js"></script>
+<script src="../../static/libs/pagination/common/highlight.min.js"></script>
+<script src="../../static/libs/pagination/jquery.pagination.js"></script>
+
+
+{% block script %}
+
+    <script>
+        //设置左侧导航选中状态
+        $(function () {
+            checked_item = $.cookie('checked_item');
+            if (checked_item == undefined) {
+                checked_item = 'article'
+            }
+            $('.main-menu li').siblings().removeClass('my-active');
+            $('.main-menu ' + '#' + checked_item).addClass('my-active');
+
+
+        });
+        $(function () {
+            $('.main-menu li a').click(function () {
+
+                value = $(this).attr('value');
+                $.cookie('checked_item', value);
+            });
+        });
+    </script>
+
+{% endblock %}
+</body>
+</html>

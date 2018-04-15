@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="xxxxx">
+    <meta name="kewords" content="Python,Js,HTML....">
+    <title>个人博客网站</title>
+    <meta name="apple-mobile-web-app-title" content="个人博客网站">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!--
+    设置icon
+    <link rel="shortcut icon" href="http://static.html580.com/assets/images/favicon.ico">
+    -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="个人博客网站">
+    <!--<link rel="apple-touch-icon-precomposed" href="http://static.html580.com/assets/images/favicon.ico">-->
+
+    <link href="{{ url_for("static",filename="libs/bootstrap3.3.7/css/bootstrap.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for("static",filename="css/site.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='libs/Font-Awesome-3.2.1/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
+
+    <link href='http://cdn.webfont.youziku.com/webfonts/nomal/114961/45913/5a9ea137f629d80374f74a27.css'
+          rel='stylesheet' type='text/css'/>
+
+</head>
+<body>
+
+<!--博客顶级标题开始-->
+
+<div class="top-header hidden-xs">
+    <div class="container">
+        <div class="row">
+            <span class="greet padding-left15">您好，欢迎到访郭迁迁个人博客!</span>
+            <a href="#" class="login padding-right15">
+                <span class="glyphicon glyphicon-log-in"></span>
+                &nbsp;登录
+            </a>
+        </div>
+    </div>
+</div>
+<!--博客顶级标题结束-->
+
+
+<!--博客标题开始-->
+
+
+<div class="header hidden-xs">
+    <div class="container">
+        <div class="row">
+            <div class="logo ">
+                <a href="#" title="郭小郭博客">
+
+                    <span class="header-title css10a0cf083f1c111 ">郭迁迁博客</span>
+                    <span class="header-desc ">–关注Python开发</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--博客标题结束-->
+
+
+<!--博客导航栏开始-->
+
+<nav class="navbar navbar-default blog-nav">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#navbar-menu">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visible-xs" href="#">郭迁迁博客</a>
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <!--<div class="navbar-header hidden">-->
+                <!--<a class="navbar-brand" href="#">郭小郭博客</a>-->
+                <!--</div>-->
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#" target="_blank">首页</a>
+                    </li>
+                    <li class="nav-hover">
+                        <a href="#" target="_blank">技术分享<span class="caret"></span></a>
+                        <ul class="dropdown-menu clearfix ">
+                            <li>
+                                <a href="#" target="_blank">Python</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">HTML</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">JavaScript</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">BootStrap</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">CSS</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">大数据分析</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">运维</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">数据库</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-hover">
+                        <a href="#" target="_blank">开源项目<span class="caret"></span></a>
+                        <ul class="dropdown-menu clearfix ">
+                            <li>
+                                <a href="#" target="_blank">Qt仓库管理系统</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">个人IT博客</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">Docker云实验平台</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-hover">
+                        <a href="#" target="_blank">读书笔记<span class="caret"></span></a>
+                        <ul class="dropdown-menu clearfix ">
+                            <li>
+                                <a href="#" target="_blank">浪潮之巅</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">数学之美</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">算法导论</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">白帽子讲Web安全</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-hover">
+                        <a href="#" target="_blank">个人归档</a>
+                    </li>
+                    <li class="nav-hover">
+                        <a href="#" target="_blank">关于我</a>
+                    </li>
+
+
+                </ul>
+                <form class="navbar-form navbar-right" action="#" method="post">
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="请输入关键字" maxlength="20"
+                               autocomplete="off">
+                        <span class="input-group-btn">
+                    <button class="btn btn-default btn-search" name="search" type="submit">搜索</button>
+                </span>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</nav>
+<!--博客导航结束-->
+
+
+<div class="main">
+    <div class="container">
+        <div class="row ">
+            <div class="notice box">
+                <!--<div class="container">-->
+                <a href="#">
+                    <span class="glyphicon icon-volume-up"> </span>
+                    <span class="notice-content">博主发布最新开源项目-基于docker的云实验平台</span>
+                </a>
+                <!--</div>-->
+
+            </div>
+
+            <div id="content" class="col-sm-9">
+                <!--<div id="showPro" class="show-pro box">-->
+                <div id="proCarousel" class="pro-carousel box carousel slide">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#proCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#proCarousel" data-slide-to="1"></li>
+                        <li data-target="#proCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <a href="#">
+                                <img src="../../static/image/mao1.jpg" alt="小猫1">
+                                <div class="carousel-caption">
+
+                                    <h1>MacBook Air</h1>
+
+                                    <p>有了新一代 802.11ac 技术，MacBook Air 令 Wi-Fi 速度超越极限。</p>
+                                </div>
+                            </a>
+
+
+                        </div>
+                        <div class="item">
+
+                            <a href="#">
+                                <img src="../../static/image/mao2.jpg" alt="小猫2">
+                                <div class="carousel-caption">
+
+                                    <h1>MacBook Air</h1>
+
+                                    <p>有了新一代 802.11ac 技术，MacBook Air 令 Wi-Fi 速度超越极限。</p>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="../../static/image/mao3.jpg" alt="小猫3">
+                                <div class="carousel-caption">
+
+                                    <h1>MacBook Air</h1>
+
+                                    <p>有了新一代 802.11ac 技术，MacBook Air 令 Wi-Fi 速度超越极限。</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+                    <a class="carousel-control left" href="#proCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"> </span>
+                    </a>
+                    <a class="carousel-control right" href="#proCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"> </span>
+                    </a>
+                </div>
+
+                <!--</div>-->
+                <div class="last-article box">
+                    <h3 class="page-header">
+                        最新文章
+                    </h3>
+                    <div class="article-list">
+                        <article>
+                            <header>
+                                <a href="#" class="cat">
+                                    学习笔记
+                                    <i></i>
+                                </a>
+                                <h2>
+                                    <a>基于Docker的云实验平台</a>
+                                </h2>
+                            </header>
+                            <a class="note">
+                                有客户建议，侧栏的热门推荐能不能调用置顶类型的文章，因为本站一直未置顶过文章，所以没考虑过这方面，但是既然有需要就得满足啊，是不？于是乎在网站查看教程，别说还真有一篇，信心博客写的，感觉有用就记录下，具体代码如下；调用zblogphp置顶文章是通过GetList函数实现的：{$topArray&nb...
+                            </a>
+                            <p class="auth-span">
+                            <span class="muted">
+                                <span class="icon-calendar"></span>
+                                2010-10-10
+                            </span>
+
+                                <span class="muted">
+                                <span class="icon-eye-open"></span>
+                                1720次查看
+                            </span>
+                                <span class="muted">
+                                <span class="icon-comments-alt">
+                                </span>
+                                <a target="_blank" href="#">
+                                    1条评论
+                                </a>
+                            </span>
+
+                            </p>
+                        </article>
+
+
+                        <article>
+                            <header>
+                                <a href="#" class="cat">
+                                    学习笔记
+                                    <i></i>
+                                </a>
+                                <h2>
+                                    <a>基于Docker的云实验平台</a>
+                                </h2>
+                            </header>
+                            <a class="note">
+                                有客户建议，侧栏的热门推荐能不能调用置顶类型的文章，因为本站一直未置顶过文章，所以没考虑过这方面，但是既然有需要就得满足啊，是不？于是乎在网站查看教程，别说还真有一篇，信心博客写的，感觉有用就记录下，具体代码如下；调用zblogphp置顶文章是通过GetList函数实现的：{$topArray&nb...
+                            </a>
+                            <p class="auth-span">
+                            <span class="muted">
+                                <span class="icon-calendar"></span>
+                                2010-10-10
+                            </span>
+
+                                <span class="muted">
+                                <span class="icon-eye-open"></span>
+                                1720次查看
+                            </span>
+                                <span class="muted">
+                                <span class="icon-comments-alt">
+                                </span>
+                                <a target="_blank" href="#">
+                                    1条评论
+                                </a>
+                            </span>
+
+                            </p>
+                        </article>
+
+
+                        <article>
+                            <header>
+                                <a href="#" class="cat">
+                                    学习笔记
+                                    <i></i>
+                                </a>
+                                <h2>
+                                    <a>基于Docker的云实验平台</a>
+                                </h2>
+                            </header>
+                            <a class="note">
+                                有客户建议，侧栏的热门推荐能不能调用置顶类型的文章，因为本站一直未置顶过文章，所以没考虑过这方面，但是既然有需要就得满足啊，是不？于是乎在网站查看教程，别说还真有一篇，信心博客写的，感觉有用就记录下，具体代码如下；调用zblogphp置顶文章是通过GetList函数实现的：{$topArray&nb...
+                            </a>
+                            <p class="auth-span">
+                            <span class="muted">
+                                <span class="icon-calendar"></span>
+                                2010-10-10
+                            </span>
+
+                                <span class="muted">
+                                <span class="icon-eye-open"></span>
+                                1720次查看
+                            </span>
+                                <span class="muted">
+                                <span class="icon-comments-alt">
+                                </span>
+                                <a target="_blank" href="#">
+                                    1条评论
+                                </a>
+                            </span>
+
+                            </p>
+                        </article>
+
+
+                        <article>
+                            <header>
+                                <a href="#" class="cat">
+                                    学习笔记
+                                    <i></i>
+                                </a>
+                                <h2>
+                                    <a>基于Docker的云实验平台</a>
+                                </h2>
+                            </header>
+                            <a class="note">
+                                有客户建议，侧栏的热门推荐能不能调用置顶类型的文章，因为本站一直未置顶过文章，所以没考虑过这方面，但是既然有需要就得满足啊，是不？于是乎在网站查看教程，别说还真有一篇，信心博客写的，感觉有用就记录下，具体代码如下；调用zblogphp置顶文章是通过GetList函数实现的：{$topArray&nb...
+                            </a>
+                            <p class="auth-span">
+                            <span class="muted">
+                                <span class="icon-calendar"></span>
+                                2010-10-10
+                            </span>
+
+                                <span class="muted">
+                                <span class="icon-eye-open"></span>
+                                1720次查看
+                            </span>
+                                <span class="muted">
+                                <span class="icon-comments-alt">
+                                </span>
+                                <a target="_blank" href="#">
+                                    1条评论
+                                </a>
+                            </span>
+
+                            </p>
+                        </article>
+
+
+                    </div>
+
+                </div>
+                <div class="more-article ">&nbsp;&nbsp;
+                    <a href="#">点击查看更多</a> &nbsp;
+                </div>
+            </div>
+
+            <div id="sidebar" class="col-sm-3">
+                <div class="blogger-info box">
+                    <div class="avatar col-sm-12">
+                        <img class="img-circle img-thumbnail img-responsive center-block" src="../../static/image/touxiang.jpg"
+                             alt="头像"/>
+
+                    </div>
+
+                    <h3 class="blogger-name">
+                        <a>郭迁迁</a>
+                    </h3>
+                    <h4 class="blogger-work">
+                        Python开发工程师
+                    </h4>
+
+                    <ul class="communication-list">
+                        <li class="weixin">
+
+
+                            <!--<a id="app" style="background-image:url('app.png')" class="btn" data-toggle="popover" data-placement="bottom"></a>-->
+
+
+                            <a id="weixin" title="微信" href="#" target="_blank" data-toggle="popover"
+                               data-placement="bottom">
+                                <img class="img-circle" src="../../static/image/微信4.png" alt="微信二维码"/>
+                            </a>
+                        </li>
+                        <li class="qq">
+                            <a id="qq" title="QQ" href="#" data-toggle="popover" data-placement="bottom">
+                                <img class="img-circle" src="../../static/image/qq.png" alt="QQ二维码"/>
+                            </a>
+                        </li>
+                        <li class="csdn">
+                            <a title="csdn" href="http://blog.csdn.net/guoqianqian5812" target="blank">
+                                <img class="img-circle" src="../../static/image/csdn.png" alt="csdn地址"/>
+                            </a>
+                        </li>
+                        <li class="github">
+                            <a title="github" href="#" target="_blank">
+                                <img class="img-circle" src="../../static/image/github.png" alt="github地址"/>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="article-archiving box clearfix" id="article-fl">
+                    <h3 class="page-header">
+                        文章分类
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">Python</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="more hidden" id="flBoxDown"><span>展开</span><b class="caret"></b></a>
+
+                </div>
+
+
+                <div class="article-archiving box clearfix" id="article-gd">
+                    <h3 class="page-header">
+                        文章归档
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2018年3月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2018年2月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2018年1月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年12月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年10月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年9月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年8月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年7月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年6月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年5月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年5月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年5月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="arch-name">2017年5月</span>
+                                <span class="article-count">10篇</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="more hidden" id="gdBoxDown"><span>展开</span><b class="caret"></b></a>
+
+                </div>
+
+
+                <!--<div class="tag box">-->
+                <!--<h3 class="page-header">-->
+                <!--标签-->
+                <!--</h3>-->
+
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer  clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="footer-content col-sm-12">
+                <span class="col-sm-9">
+                    郭迁迁博客 版权所有，保留一切权利 !  © 2017-2018 · xxxx · 托管于 腾讯云
+                </span>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+<script src="../../static/libs/jquery-1.11.1/jquery.js"></script>
+<script src="../../static/libs/bootstrap3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript">
+
+
+    //    var result = window.matchMedia('(max-width: 700px)');
+    //
+    //    if (result.matches) {
+    //        alert('页面宽度小于等于700px');
+    //    } else {
+    //        alert('页面宽度大于700px');
+    //    }
+
+
+    /**
+     * 添加下拉菜单点击事件
+     * */
+    $("li.nav-hover").mouseenter(function (event) {
+        $(this).addClass("open");
+    }).mouseleave(function (event) {
+        $(this).removeClass("open");
+    });
+
+    /***
+     *
+     * 设置轮播器自动播放
+     * */
+    $("#proCarousel").carousel('cycle');//
+
+
+    /**
+     *
+     * 添加微信，QQ二维码弹出处理
+     * */
+    $('#weixin').popover({
+        trigger: 'hover',//鼠标以上时触发弹出提示框
+        html: true,//开启html 为true的话，data-content里就能放html代码了
+        content: "<img src='../static/image/weixinrcode.png' style='width: 150px; height: 150px'>"
+    });
+    $('#qq').popover({
+        trigger: 'hover',
+        html: true,
+        content: "<img src='../static/image/qqrcode.png' style='width: 150px; height: 150px;'>"
+    });
+
+</script>
+
+<script type="text/javascript">
+//    $(function () {
+//        var nav = $("#header-nav");
+//        var nh = $('.navbar-header');
+//        var win = $(window);
+//        var sc = $(document);
+//        win.scroll(function () {
+//
+//            if (sc.scrollTop() >= 80) {
+//                nav.addClass("navbar-fixed-top");
+//                nh.removeClass("hidden");
+//            } else {
+//                nav.removeClass("navbar-fixed-top ");
+//                nh.addClass('hidden')
+//            }
+//        })
+//    })
+</script>
+
+
+<script>
+    $(function(){
+        var gdLiCount = $("#article-gd ul li").length;
+        if (gdLiCount > 9){
+            $('#gdBoxDown').removeClass('hidden');
+            var a =$("#article-gd ul li:gt(9)");
+            a.hide();
+            $("#gdBoxDown").click(function(){
+                if(a.is(':visible')){
+                    a.slideUp('fast');
+                    $(this).removeClass('up');
+                    $('#gdBoxDown span').text('展开');
+                    $('#gdBoxDown  b').removeClass('caret-down');
+                    $('#gdBoxDown  b').addClass('caret');
+
+
+                }else{
+                    a.slideDown('fast').show();
+                    $(this).addClass('up');
+                    $('#gdBoxDown span').text('收起');
+                    $('#gdBoxDown  b').removeClass('caret');
+                    $('#gdBoxDown  b').addClass('caret-down');
+                }
+            });
+        }
+
+    });
+    $(function(){
+        var flLiCount = $("#article-fl ul li").length;
+
+        if (flLiCount > 10){
+            $('#flBoxDown').removeClass('hidden');
+            var a =$("#article-fl ul li:gt(9)");
+            a.hide();
+            $("#flBoxDown").click(function(){
+                if(a.is(':visible')){
+                    a.slideUp('fast');
+                    $(this).removeClass('up');
+                    $('#flBoxDown span').text('展开');
+                    $('#flBoxDown  b').removeClass('caret-down');
+                    $('#flBoxDown  b').addClass('caret');
+
+
+                }else{
+                    a.slideDown('fast').show();
+                    $(this).addClass('up');
+                    $('#flBoxDown span').text('收起');
+                    $('#flBoxDown  b').removeClass('caret');
+                    $('#flBoxDown  b').addClass('caret-down');
+                }
+            });
+        }
+
+    });
+
+</script>
+
+</body>
+
+</html>
